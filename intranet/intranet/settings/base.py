@@ -19,12 +19,20 @@ TEMPLATE_DIRS = (
 SECRET_KEY = '(__b8z0w!g@2vgn&ojyk0@*gpq_01!^x=br1mb*&^xqhoy*@w%'
 
 INSTALLED_APPS = (
+    # Admin Tools
+    'admin_tools',
+    'admin_tools.theming',
+    'admin_tools.menu',
+    'admin_tools.dashboard',
+    # End of Admin Tools
+
     'django.contrib.admin',
     'django.contrib.auth',
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+
     # Third part app
     'south',
 
@@ -41,6 +49,11 @@ MIDDLEWARE_CLASSES = (
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+)
+
+TEMPLATE_CONTEXT_PROCESSORS = (
+    'django.contrib.auth.context_processors.auth',
+    'django.core.context_processors.request',
 )
 
 ROOT_URLCONF = 'intranet.urls'
