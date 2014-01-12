@@ -1,8 +1,34 @@
-## Intranet Baética en Django y Backbone
+# Intranet Baética en Django y Backbone
 
 ## Install
 - bower install
 - npm install
+
+###Django
+- ./manage.py runserver --settings=intranet.settings.local
+- ./manage.py validate --settings=intranet.settings.local
+
+####Shell
+- ./manage.py shell --settings=intranet.settings.local
+- ./manage.py createsuperuser --setting=intranet.settings.local
+
+
+####Mockups
+Creación de modelos
+- ./manage.py mockups app.Model:n --setting=intranet.settings.local
+
+####South
+Creación de migraciones
+- ./manage.py schemamigration empleados --auto --settings=intranet.settings.local
+- ./manage.py schemamigration costes --initial --settings=intranet.settings.local
+Migrar
+- ./manage.py migrate costes --setting=intranet.settings.local
+
+###Alias
+- alias a_local='./manage.py runserver --settings=intranet.settings.local'
+- alias v_local='./manage.py validate --settings=intranet.settings.local'
+- alias s_local='./manage.py shell --settings=intranet.settings.local'
+- source .bash_profile
 
 
 ## License
