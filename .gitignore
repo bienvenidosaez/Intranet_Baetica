@@ -1,1 +1,5 @@
 *.pyc
+*.DS_Store
+intranet/intranet/static/no_deploy
+intranet/intranet/static/node_modules
+static

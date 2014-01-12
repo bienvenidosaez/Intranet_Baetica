@@ -4,28 +4,10 @@ from django.conf.urls import *
 from django.contrib import admin
 admin.autodiscover()
 
-#rest framework
-from rest_framework import routers
-from clientes.views import ClienteViewSet
-from empleados.views import EmpleadoViewSet
-from proyectos.views import ProyectoViewSet
-
-from empleados.views import prueba
-
-router = routers.DefaultRouter()
-router.register(r'empleados',  EmpleadoViewSet)
-router.register(r'proyectos',  ProyectoViewSet)
-router.register(r'clientes',   ClienteViewSet)
-
-
 urlpatterns = patterns('',
-    # Examples:
-    url(r'^$', prueba),
-    # url(r'^blog/', include('blog.urls')),
 
-    #rest framework
-    url(r'^api/', include(router.urls)),
-    url(r'^api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+    #url(r'^$', prueba),
+    url(r'^api/', include('api.urls')),
 
     #Urls para el admin
     url(r'^admin/', include(admin.site.urls)),
