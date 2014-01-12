@@ -9,8 +9,12 @@ PROJECT_DIR = Path(__file__).ancestor(3)
 MEDIA_ROOT = PROJECT_DIR.child("media")
 STATIC_ROOT = PROJECT_DIR.child("static")
 STATICFILES_DIRS = (
-    PROJECT_DIR.child("statics"),
+    #PROJECT_DIR.child("static"),
 )
+
+# Static files (CSS, JavaScript, Images)
+STATIC_URL = '/static/'
+
 TEMPLATE_DIRS = (
     PROJECT_DIR.child("templates"),
 )
@@ -69,8 +73,5 @@ SITE_ID = 1
 USE_I18N = True
 USE_L10N = True
 USE_TZ = True
-
-# Static files (CSS, JavaScript, Images)
-STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'empleados.Empleado'
