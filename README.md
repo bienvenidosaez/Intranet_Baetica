@@ -1,8 +1,9 @@
-# Intranet Baética en Django y Backbone
+# Gestor de proyectos en Django y Backbone
 
-## Install
+## Instalación de archivos estáticos
 - bower install
 - npm install
+- ./manage.py collectstatic --settings=intranet.settings.local
 
 ###Django
 - ./manage.py runserver --settings=intranet.settings.local
