@@ -1,3 +1,16 @@
-from django.shortcuts import render
+from django.http import HttpResponse
+from .models import Proyecto
 
-# Create your views here.
+
+def home(request):
+    html = "<html><body>Hola</body></html>"
+    return HttpResponse(html)
+
+
+from .serializers import ProyectoSerializer
+from rest_framework import viewsets
+
+class ProyectoViewSet(viewsets.ModelViewSet):
+    queryset = Proyecto.objects.all()
+    serializer_class = ProyectoSerializer
+

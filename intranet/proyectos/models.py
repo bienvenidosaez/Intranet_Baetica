@@ -1,3 +1,5 @@
+# -*- encoding: utf-8 -*-
+
 from django.db import models
 from empleados.models import TimeStampedModel, Empleado
 from clientes.models import Cliente
@@ -11,6 +13,20 @@ class Proyecto(TimeStampedModel):
 
     def __unicode__(self):
         return self.nombre
+
+    def total_horas(self):
+        from costes.models import LineaCoste
+        from django.db.models import Sum
+        horas = LineaCoste.objects.filter(proyecto=self).aggregate(Sum('tiempo'))
+        return horas.get('tiempo__sum')
+
+    def coste_total(self):
+        from costes.models import LineaCoste
+        coste = 0
+        for l in LineaCoste.objects.filter(proyecto=self):
+            empleado = l.empleado
+            coste = coste + l.tiempo * empleado.p_hora
+        return coste
 
 
 class Muro(TimeStampedModel):

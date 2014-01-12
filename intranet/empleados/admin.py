@@ -3,6 +3,6 @@ from empleados.models import Empleado
 
 
 class EmpleadoAdmin(admin.ModelAdmin):
-    list_display = ('nombre', 'email', 'telefono', 'creado', 'modificado')
+    list_display = ('nombre', 'email', 'telefono', 'p_hora')
 
 admin.site.register(Empleado, EmpleadoAdmin)
