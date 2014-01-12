@@ -9,7 +9,7 @@ PROJECT_DIR = Path(__file__).ancestor(3)
 MEDIA_ROOT = PROJECT_DIR.child("media")
 STATIC_ROOT = PROJECT_DIR.child("static")
 STATICFILES_DIRS = (
-    PROJECT_DIR.child("assets"),
+    PROJECT_DIR.child("statics"),
 )
 TEMPLATE_DIRS = (
     PROJECT_DIR.child("templates"),
@@ -43,7 +43,6 @@ INSTALLED_APPS = (
     'proyectos',
     'costes',
     'api',
-    #'rest_framework',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -75,16 +74,3 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 AUTH_USER_MODEL = 'empleados.Empleado'
-
-# REST_FRAMEWORK = {
-#     # Use hyperlinked styles by default.
-#     # Only used if the `serializer_class` attribute is not set on a view.
-#     'DEFAULT_MODEL_SERIALIZER_CLASS':
-#         'rest_framework.serializers.HyperlinkedModelSerializer',
-
-#     # Use Django's standard `django.contrib.auth` permissions,
-#     # or allow read-only access for unauthenticated users.
-#     'DEFAULT_PERMISSION_CLASSES': [
-#         'rest_framework.permissions.DjangoModelPermissionsOrAnonReadOnly'
-#     ],
-# }
