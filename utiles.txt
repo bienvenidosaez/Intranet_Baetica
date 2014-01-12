@@ -9,7 +9,7 @@
 
 #Mockups
     #creación de modelos
-    ./
+    ./manage.py mockups app.Model:n --setting=intranet.settings.local
 
 #South
     #creación de migraciones

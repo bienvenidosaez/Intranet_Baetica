@@ -8,7 +8,6 @@ from empleados.models import Empleado
 
 import json
 
-
 class EmpleadoApi(Resource):
 
     def get(self, request, pk=None, **kwargs):
