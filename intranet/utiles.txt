@@ -19,4 +19,10 @@
     ./manage.py migrate costes --setting=intranet.settings.local
 
 #Alias
+    alias a_local='./manage.py runserver --settings=intranet.settings.local'
+    alias v_local='./manage.py validate --settings=intranet.settings.local'
+    alias s_local='./manage.py shell --settings=intranet.settings.local'
+    
+    source .bash_profile
+
     
