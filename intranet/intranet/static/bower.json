@@ -1,0 +1,11 @@
+{
+    "name": "IntraBaetica",
+    "version": "0.0.1",
+    "dependencies": {
+        "normalize-css": "*",
+        "modernizr": "*",
+        "jquery": "*",
+        "underscore": "*",
+        "backbone": "*"
+    }
+}
